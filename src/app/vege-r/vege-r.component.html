@@ -1,0 +1,47 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Vege Rates</h3>
+      <hr>
+    </div>  
+  </div>
+
+
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let vege of veges">
+        <img height="150px" src={{vege.image}} alt={{vege.name}}>
+        <mat-grid-tile-footer>
+          <h1 mat-line>{{vege.name | uppercase}}</h1>
+          <p mat-line>
+           <span>{{vege.rate}}</span>
+          </p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div fxFlex *ngIf = "selectedVegetable">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{selectedVegetable.name | uppercase}}</h3>
+        </mat-card-title>
+        <img mat-card-avatar src={{selectedVegetable.image}} alt={{selectedVegetable.name}}>
+      </mat-card-header>
+      <img height="150px" width="20px" mat-card-image src={{selectedVegetable.image}} alt={{selectedVegetable.name}}>
+      <mat-card-content>
+        <p>{{selectedVegetable.weight}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>
