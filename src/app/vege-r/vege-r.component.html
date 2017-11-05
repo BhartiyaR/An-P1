@@ -12,7 +12,7 @@
 
   <div fxFlex>
     <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let vege of veges">
+      <mat-grid-tile *ngFor="let vege of veges" (click)="onSelect(vege)">
         <img height="150px" src={{vege.image}} alt={{vege.name}}>
         <mat-grid-tile-footer>
           <h1 mat-line>{{vege.name | uppercase}}</h1>
@@ -23,8 +23,9 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+  <app-cmt [vege]="selectedVegetable"> </app-cmt>
 
-  <div fxFlex *ngIf = "selectedVegetable">
+  <!-- <div fxFlex *ngIf = "selectedVegetable">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -32,7 +33,7 @@
         </mat-card-title>
         <img mat-card-avatar src={{selectedVegetable.image}} alt={{selectedVegetable.name}}>
       </mat-card-header>
-      <img height="150px" width="20px" mat-card-image src={{selectedVegetable.image}} alt={{selectedVegetable.name}}>
+      <img mat-card-image src={{selectedVegetable.image}} alt={{selectedVegetable.name}}>
       <mat-card-content>
         <p>{{selectedVegetable.weight}}
         </p>
@@ -42,6 +43,6 @@
         <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
-  </div>
+  </div> -->
 
 </div>

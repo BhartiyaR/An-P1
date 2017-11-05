@@ -8,12 +8,14 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 import 'hammerjs';
 import { VegeRComponent } from './vege-r/vege-r.component';
+import { CmtComponent } from './cmt/cmt.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VegeRComponent
+    VegeRComponent,
+    CmtComponent
   ],
   imports: [
     BrowserModule,

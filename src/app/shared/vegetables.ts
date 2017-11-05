@@ -3,4 +3,12 @@ export class Vegetables{
     image: string;
     rate: string;
     weight:string;
+    comments: Comm [];
+}
+
+class Comm {
+    rating: number;
+    comment: string;
+    author: string;
+    date: string
 }

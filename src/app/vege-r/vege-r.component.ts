@@ -2,33 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Vegetables} from '../shared/vegetables';
 
-const VEGES: Vegetables[] = [
-  {
-    name: 'potato',
-    image: '/assets/images/potato.jpg',
-    rate: '₹10',
-    weight: '1kg'
-  },
-  {
-    name: 'onion',
-    image: '/assets/images/onion.jpg',
-    rate: '₹50',
-    weight: '1kg'
-  },
-  {
-    name: 'ocra/ladyfinger',
-    image: '/assets/images/ocra.jpg',
-    rate: '₹40',
-    weight: '1kg'
-  },
-  {
-    name: 'tomato',
-    image: '/assets/images/tomato.jpg',
-    rate: '₹38',
-    weight: '1kg'
-  }
-  
-]
+import {COMMENTS} from '../shared/comment';
 
 @Component({
   selector: 'app-vege-r',
@@ -37,13 +11,17 @@ const VEGES: Vegetables[] = [
 })
 export class VegeRComponent implements OnInit {
 
-  veges = VEGES;
+  veges = COMMENTS;
 
-  selectedVegetable: Vegetables = VEGES[0];
+  selectedVegetable: Vegetables;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(vege: Vegetables){
+    this.selectedVegetable = vege;
   }
 
 }
