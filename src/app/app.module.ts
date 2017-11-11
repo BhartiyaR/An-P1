@@ -9,13 +9,30 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import 'hammerjs';
 import { VegeRComponent } from './vege-r/vege-r.component';
 import { CmtComponent } from './cmt/cmt.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+import {VegesService} from './services/veges.service';
+import {PromotionService} from './services/promotion.service';
+import {LeaderService} from './services/leader.service'
+
+import {AppRoutingModule} from './app-routing/app-routing.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VegeRComponent,
-    CmtComponent
+    CmtComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +45,13 @@ import { CmtComponent } from './cmt/cmt.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [VegesService,
+              PromotionService,
+              LeaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

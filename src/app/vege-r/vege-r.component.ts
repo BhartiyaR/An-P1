@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Vegetables} from '../shared/vegetables';
 
-import {COMMENTS} from '../shared/comment';
+import {VegesService} from '../services/veges.service';
 
 @Component({
   selector: 'app-vege-r',
@@ -11,13 +11,14 @@ import {COMMENTS} from '../shared/comment';
 })
 export class VegeRComponent implements OnInit {
 
-  veges = COMMENTS;
+  veges: Vegetables[];
 
   selectedVegetable: Vegetables;
 
-  constructor() { }
+  constructor(private vegeser: VegesService) { }
 
   ngOnInit() {
+    this.veges = this.vegeser.getVeges();
   }
 
   onSelect(vege: Vegetables){

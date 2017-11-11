@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import {Params, ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
+
 import {Vegetables} from '../shared/vegetables'
+import {VegesService} from '../services/veges.service';
 
 @Component({
   selector: 'app-cmt',
@@ -9,13 +13,19 @@ import {Vegetables} from '../shared/vegetables'
 })
 export class CmtComponent implements OnInit {
 
-  @Input()
-
   vege: Vegetables;
 
-  constructor() { }
+  constructor(private vegeser : VegesService, 
+    private route : ActivatedRoute,
+    private loc : Location) { }
 
   ngOnInit() {
+    let id = +this.route.snapshot.params['id'];
+    this.vege = this.vegeser.getVege(id);
+  }
+
+  goBack(): void {
+    this.loc.back();
   }
 
 }

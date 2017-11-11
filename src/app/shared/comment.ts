@@ -2,6 +2,7 @@ import {Vegetables} from './vegetables';
 
 export const COMMENTS : Vegetables[] = [
     {
+        id: 1,
         name: 'potato',
         image: '/assets/images/potato.jpg',
         rate: '₹10',
@@ -37,9 +38,11 @@ export const COMMENTS : Vegetables[] = [
                 author: "25 Cent",
                 date: "2011-12-02T17:57:28.556094Z"
             }
-        ]
+        ],
+        featured: true
     },
     {
+        id: 2,
         name: 'onion',
         image: '/assets/images/onion.jpg',
         rate: '₹50',
@@ -75,9 +78,11 @@ export const COMMENTS : Vegetables[] = [
                 author: "25 Cent",
                 date: "2011-12-02T17:57:28.556094Z"
             }
-        ]
+        ],
+        featured: false
     },
     {
+        id: 3,
         name: 'ocra/ladyfinger',
         image: '/assets/images/ocra.jpg',
         rate: '₹40',
@@ -113,9 +118,11 @@ export const COMMENTS : Vegetables[] = [
                 author: "25 Cent",
                 date: "2011-12-02T17:57:28.556094Z"
             }
-        ]
+        ],
+        featured: false
     },
     {
+        id: 4,
         name: 'tomato',
         image: '/assets/images/tomato.jpg',
         rate: '₹38',
@@ -151,6 +158,7 @@ export const COMMENTS : Vegetables[] = [
                 author: "25 Cent",
                 date: "2011-12-02T17:57:28.556094Z"
             }
-        ]
+        ],
+        featured: false
     }
 ];

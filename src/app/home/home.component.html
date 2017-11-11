@@ -1,0 +1,53 @@
+<div class="container"
+fxLayout="row"
+fxLayout.sm="column"
+fxLayout.xs="column"
+fxLayoutAlign.gt-mat="space-around center"
+fxLayoutGap="10px">
+
+<mat-card *ngIf="vege" fxFlex>
+<mat-card-header>
+<div mat-card-avatar></div>
+<mat-card-title>
+ <h3>{{vege.name | uppercase}}</h3>
+</mat-card-title>
+</mat-card-header>
+<img mat-card-image src={{vege.image}} alt={{vege.name}}>
+<mat-card-content>
+<p>{{vege.weight}}
+</p>
+</mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="promotion" fxFlex>
+<mat-card-header>
+<div mat-card-avatar></div>
+<mat-card-title>
+ <h3>{{promotion.name | uppercase}}</h3>
+</mat-card-title>
+</mat-card-header>
+<img mat-card-image src={{promotion.image}} alt={{promotion.name}}>
+<mat-card-content>
+<p>{{promotion.weight}}
+</p>
+</mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="leader" fxFlex>
+<mat-card-header>
+<div mat-card-avatar></div>
+<mat-card-title>
+ <h3>
+     <span>{{leader.name | uppercase}} </span>
+     <span>{{leader.abbr | uppercase}}</span>
+</h3>
+</mat-card-title>
+</mat-card-header>
+<img mat-card-image src={{leader.image}} alt={{leader.name}}>
+<mat-card-content>
+<p mat-line>{{leader.designation}}</p>
+<p mat-line>{{leader.description}}</p>
+</mat-card-content>
+</mat-card>
+
+</div>
