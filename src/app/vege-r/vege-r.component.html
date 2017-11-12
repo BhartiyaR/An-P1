@@ -10,7 +10,7 @@
   </div>
 
 
-  <div fxFlex>
+  <div fxFlex *ngIf="veges">
     <mat-grid-list cols="2" rowHeight="200px">
       <mat-grid-tile *ngFor="let vege of veges" [routerLink]="['/cmt',vege.id]">
         <img height="150px" src={{vege.image}} alt={{vege.name}}>
@@ -22,5 +22,8 @@
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
+  </div>
+  <div [hidden]="dishes">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
   </div>
 </div>

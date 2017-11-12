@@ -8,14 +8,23 @@ export class VegesService {
   constructor() { }
 
   getVeges(): Promise<Vegetables[]>{
-    return Promise.resolve(COMMENTS);
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(COMMENTS), 2000);
+    });
   }
 
   getVege(id: number): Promise<Vegetables> {
-    return Promise.resolve(COMMENTS.filter((vege) => (vege.id === id))[0]);
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(COMMENTS.filter((vege) => (vege.id === id))[0]), 2000);
+    });
   }
 
   getFeaturedVege(): Promise<Vegetables> {
-    return Promise.resolve(COMMENTS.filter((vege) => vege.featured)[0]);
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(COMMENTS.filter((vege) => vege.featured)[0]), 2000);
+    });
   }
 }
