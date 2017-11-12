@@ -3,9 +3,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule,MatMenuModule,MatToolbarModule,MatInputModule,MatCheckboxModule,MatIconModule,MatCardModule, MatListModule, MatGridListModule,MatDialogModule} from '@angular/material';
+import {MatButtonModule,MatMenuModule,MatToolbarModule,MatInputModule,MatSelectModule,MatCheckboxModule,MatSlideToggleModule,MatIconModule,MatCardModule, MatListModule, MatGridListModule,MatDialogModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { VegeRComponent } from './vege-r/vege-r.component';
@@ -53,7 +54,10 @@ import { LoginComponent } from './login/login.component';
     MatDialogModule,
     FormsModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   providers: [VegesService,
               PromotionService,
