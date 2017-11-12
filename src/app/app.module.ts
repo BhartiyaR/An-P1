@@ -3,8 +3,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule,MatMenuModule,MatToolbarModule,MatIconModule,MatCardModule, MatListModule, MatGridListModule} from '@angular/material';
+import {MatButtonModule,MatMenuModule,MatToolbarModule,MatInputModule,MatCheckboxModule,MatIconModule,MatCardModule, MatListModule, MatGridListModule,MatDialogModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { VegeRComponent } from './vege-r/vege-r.component';
@@ -20,6 +21,7 @@ import {PromotionService} from './services/promotion.service';
 import {LeaderService} from './services/leader.service'
 
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -32,7 +34,8 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +49,18 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     MatGridListModule,
     MatCardModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatInputModule
   ],
   providers: [VegesService,
               PromotionService,
               LeaderService
+  ],
+  entryComponents: [
+    LoginComponent
   ],
   bootstrap: [AppComponent]
 })
