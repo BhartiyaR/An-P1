@@ -18,7 +18,8 @@ export class VegeRComponent implements OnInit {
   constructor(private vegeser: VegesService) { }
 
   ngOnInit() {
-    this.veges = this.vegeser.getVeges();
+     this.vegeser.getVeges()
+    .then(veges => this.veges=veges);
   }
 
   onSelect(vege: Vegetables){

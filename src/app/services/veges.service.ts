@@ -7,15 +7,15 @@ export class VegesService {
 
   constructor() { }
 
-  getVeges(): Vegetables[]{
-    return COMMENTS;
+  getVeges(): Promise<Vegetables[]>{
+    return Promise.resolve(COMMENTS);
   }
 
-  getVege(id: number): Vegetables {
-    return COMMENTS.filter((vege) => (vege.id === id))[0];
+  getVege(id: number): Promise<Vegetables> {
+    return Promise.resolve(COMMENTS.filter((vege) => (vege.id === id))[0]);
   }
 
-  getFeaturedVege(): Vegetables {
-    return COMMENTS.filter((vege) => vege.featured)[0];
+  getFeaturedVege(): Promise<Vegetables> {
+    return Promise.resolve(COMMENTS.filter((vege) => vege.featured)[0]);
   }
 }

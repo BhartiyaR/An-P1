@@ -21,7 +21,8 @@ export class CmtComponent implements OnInit {
 
   ngOnInit() {
     let id = +this.route.snapshot.params['id'];
-    this.vege = this.vegeser.getVege(id);
+     this.vegeser.getVege(id)
+     .then(vege => this.vege=vege);
   }
 
   goBack(): void {
